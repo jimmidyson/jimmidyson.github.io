@@ -1,0 +1,25 @@
+{{ $baseurl := .Site.BaseUrl }}
+<!doctype html>
+<html class="no-js" lang="en">
+  {{ template "theme/partials/head.html" . }}
+  <body>
+    {{ template "theme/partials/header.html" . }}
+    <section id="main">
+      <div class="row">
+        <div class="large-12 columns text-center">
+          <h1 class="title">{{ .Title }}</h1>
+          {{ range .Data.Pages }}
+            <article class="post text-left">
+              <header>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <div class="right">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+              </header>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    {{ template "theme/partials/footer.html" . }}
+  </body>
+</html>
+
