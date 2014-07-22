@@ -17,4 +17,4 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin-proxy source
-git subtree push --prefix=public git@proxy.github.com:jimmidyson/jimmidyson.github.io.git master
+git subtree push --prefix=public git@github.com:jimmidyson/jimmidyson.github.io.git master
