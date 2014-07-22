@@ -38,6 +38,10 @@ body>footer p {
   text-align: center;
 }
 
+div.highlight {
+  line-height: 1em;
+}
+
 @media only screen and (min-width: 64.063em) {
   body {
     font-size: 1.25em;
