@@ -1,0 +1,22 @@
+contentdir = "content"
+layoutdir =  "layouts"
+publishdir =  "public"
+builddrafts =  false
+baseurl =  "https://jimmidyson.github.io"
+canonifyurls = true
+title = "Streaming thoughts"
+
+PygmentsUseClasses = true
+
+[Taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[permalinks]
+  post = "/blog/:title/"
+
+[params]
+  AuthorName = "Jimmi Dyson"
+  GitHubUser = "jimmidyson"
+  SidebarRecentLimit = 5
+  disqusShortname = "jimmidyson"
