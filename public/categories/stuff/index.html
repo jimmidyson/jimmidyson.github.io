@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="/css/site.css" />
   <link rel="stylesheet" href="/css/pygments-github.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/js/vendor/modernizr.js"></script>
-  <base href="https://jimmidyson.github.io" />
-  <link rel="canonical" href="https://jimmidyson.github.io/categories/stuff" />
-  <link href="https://jimmidyson.github.io/categories/stuff/index.xml" rel="alternate" type="application/rss+xml" title="Stuff" />
+  <base href="http://localhost:1313" />
+  <link rel="canonical" href="http://localhost:1313/categories/stuff" />
+  <link href="http://localhost:1313/categories/stuff/index.xml" rel="alternate" type="application/rss+xml" title="Stuff" />
 </head>
 
   <body>
@@ -48,18 +48,18 @@
           
             <article class="post text-left">
               <header>
-                <h2><a href="https://jimmidyson.github.io/blog/new/">new</a></h2>
+                <h2><a href="http://localhost:1313/blog/new/">new</a></h2>
                 <div class="post-meta">Wed, Jul 9, 2014</div>
                 <div id="categories">
                 
-                  <a href="https://jimmidyson.github.io/categories/stuff"><span class="label">stuff</span></a>
+                  <a href="http://localhost:1313/categories/stuff"><span class="label">stuff</span></a>
                 
-                  <a href="https://jimmidyson.github.io/categories/morestuff"><span class="label">morestuff</span></a>
+                  <a href="http://localhost:1313/categories/morestuff"><span class="label">morestuff</span></a>
                 
                 </div>
                 <div id="tags">
                 
-                  <a href="https://jimmidyson.github.io/tags/jimmi"><span class="label secondary">#jimmi</span></a>
+                  <a href="http://localhost:1313/tags/jimmi"><span class="label secondary">#jimmi</span></a>
                 
                 </div>
               </header>
@@ -69,21 +69,29 @@
                 </p>
               </section>
               <footer>
-                <a href="https://jimmidyson.github.io/blog/new/">Read more →</a>
+                <a href="http://localhost:1313/blog/new/">Read more →</a>
               </footer>
             </article>
           
         </div>
       </div>
     </section>
-    <footer class="row">
-  <div class="large-12 columns">
     <hr/>
+<footer class="row">
+  <div class="large-6 columns">
     <p>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
         <img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
       </a><br />
       This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </div>
+  <div class="large-6 columns">
+    <p>
+      <a href="http://hugo.spf13.com/">
+        <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="/img/hugo-logo.png" />
+      </a><br />
+      Built with <a href="http://hugo.spf13.com/">Hugo</a>.
     </p>
   </div>
 </footer>
@@ -93,6 +101,9 @@
   $(document).foundation();
 </script>
 
-  </body>
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
 

@@ -1,7 +1,7 @@
 +++
 title = "new"
 date = 2014-07-09T08:31:33Z
-categories = [ "stuff", "morestuff" ]
+categories = [ "ActiveMQ" ]
 tags = [ "jimmi" ]
 +++
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat, eros eu vulputate vestibulum, ipsum dolor ullamcorper ligula, sit amet ornare erat erat a erat. Proin porttitor non risus vitae tempor. Maecenas euismod porttitor sodales. Proin ornare nisi vel risus lacinia tristique. Praesent viverra, augue vitae placerat aliquet, tortor felis fringilla purus, id vulputate turpis mi non justo. Integer scelerisque, ligula quis aliquet vestibulum, arcu augue dapibus velit, eget consectetur nibh ante vestibulum est. Proin semper, sem sit amet malesuada luctus, lectus leo pharetra elit, vitae adipiscing justo risus vel nulla. Duis ligula turpis, euismod non hendrerit vel, lobortis eu ipsum. Fusce convallis enim sit amet erat bibendum, sit amet aliquam lorem congue. Aenean hendrerit ante sed nisl scelerisque adipiscing. Nulla mi nulla, porttitor eget ligula at, vulputate tempus turpis. Vestibulum quis condimentum nisl, ac eleifend elit. Nullam non justo non nisi congue dapibus nec auctor est. Mauris viverra, odio ut lobortis aliquet, risus mi consequat nisl, id posuere velit ipsum in nunc. Nulla id nunc et odio vehicula porttitor.
