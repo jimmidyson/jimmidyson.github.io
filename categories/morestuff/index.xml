@@ -25,6 +25,8 @@
 
 &lt;p&gt;Duis neque nisl, accumsan quis arcu ut, gravida facilisis lacus. Maecenas feugiat eros justo, sit amet ultrices risus pellentesque in. Nulla eget augue id urna iaculis dignissim. Phasellus sit amet mi sit amet nisi egestas accumsan. In sit amet sodales justo. Nam sem nulla, blandit in metus a, molestie ornare metus. Vestibulum rutrum tincidunt erat quis tincidunt. Vivamus non feugiat metus, ut tincidunt nunc. Duis ut auctor turpis. Curabitur sed libero lectus. Duis diam augue, elementum eu convallis ut, lacinia non risus. Aliquam non blandit ligula. Duis convallis, dui ac gravida posuere, mi sem ultricies tellus, vitae iaculis massa nibh a sem. Phasellus pulvinar vehicula sapien, id dignissim ligula feugiat nec. Quisque eget ipsum id nulla semper imperdiet a nec turpis. Nam sollicitudin, magna sit amet consequat tincidunt, felis nulla vestibulum diam, vel suscipit nisi velit eu orci.&lt;/p&gt;
 
+&lt;div class=&#34;panel&#34;&gt;
+
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&#34;nt&#34;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
    &lt;span class=&#34;nt&#34;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;{{ .Title }}&lt;span class=&#34;nt&#34;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
@@ -34,6 +36,8 @@
   &lt;span class=&#34;nt&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&#34;nt&#34;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     
