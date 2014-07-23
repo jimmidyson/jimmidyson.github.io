@@ -13,5 +13,10 @@
         <li><a href="/categories/{{ $key |  urlize }}">{{ $key }}</a>
       {{ end }}
     </ul>
+    <ul class="right">
+      <li><a href="https://twitter.com/share?url={{ .Permalink }}&via=jimmidyson&text={{ .Title }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]={{ .Permalink }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="https://plus.google.com/share?url={{ .Permalink }}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+    </ul>
   </section>
 </nav>
