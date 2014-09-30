@@ -1,6 +1,5 @@
 title = "Streaming thoughts"
 languageCode = "en-gb"
-disqusShortname = "jimmidyson"
 MetaDataFormat = "toml"
 
 [author]
@@ -17,10 +16,12 @@ MetaDataFormat = "toml"
 
     # Changes sidebar background and link/accent colours.
     # This also works: "theme-base-0c layout-reverse", or just "layout-reverse".
-  theme = "theme-base-0c"
+    theme = "theme-base-0c"
 
     # Select a syntax highight.
     highlight = "solarized_light"
+
+    disqusShortname = "jimmidyson"
 
     # Tagline to display under the author name in the sidebar, keep it short.
     tagline = "Current projects & general musings"
