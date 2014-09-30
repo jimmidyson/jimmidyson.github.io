@@ -19,11 +19,7 @@
                   <a href="{{ $baseurl }}/tags/{{ . | urlize | lower }}"><span class="label secondary">#{{ . }}</span></a>
                 {{ end }}
                 </div>
-              </header>
-              <section>
-                <p>
-                  {{ .Summary }}
-                </p>
+              </div>
             </header>
             <section>
               {{ .Content }}
