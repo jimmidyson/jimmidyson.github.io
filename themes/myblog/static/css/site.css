@@ -38,8 +38,20 @@ body>footer p {
   text-align: center;
 }
 
-div.highlight {
+pre {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: auto;
+}
+
+code {
+  font-weight: normal;
+  font-family: monospace;
+}
+
+pre code {
   line-height: 1em;
+  font-size: 90%;
 }
 
 @media only screen and (min-width: 64.063em) {

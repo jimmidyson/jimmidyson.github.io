@@ -14,13 +14,11 @@
                 <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                 <div class="post-meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
                 <div id="categories">
-                {{ range .Params.categories }}
-                  <a href="{{ $baseurl }}/categories/{{ . | urlize }}"><span class="label">{{ . }}</span></a>
+                {{ range .Params.topics }}
+                  <a href="{{ $baseurl }}/topics/{{ . | urlize | lower }}"><span class="label">{{ . }}</span></a>
                 {{ end }}
-                </div>
-                <div id="tags">
                 {{ range .Params.tags }}
-                  <a href="{{ $baseurl }}/tags/{{ . | urlize }}"><span class="label secondary">#{{ . }}</span></a>
+                  <a href="{{ $baseurl }}/tags/{{ . | urlize | lower }}"><span class="label secondary">#{{ . }}</span></a>
                 {{ end }}
                 </div>
               </header>

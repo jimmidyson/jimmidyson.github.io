@@ -7,18 +7,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Hello | Streaming thoughts</title>
+  <title>Openshift | Streaming thoughts</title>
   
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fjalla+One" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/foundation.min.css" />
   <link rel="stylesheet" href="/css/site.css" />
-  <link rel="stylesheet" href="/css/pygments-github.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/js/vendor/modernizr.js"></script>
-  <base href="https://jimmidyson.github.io" />
-  <link rel="canonical" href="https://jimmidyson.github.io/blog/hello/" />
-  
+  <base href="" />
+  <link rel="canonical" href="/tags/openshift/" />
+  <link href="/tags/openshift/index.xml/" rel="alternate" type="application/rss+xml" title="Openshift" />
 </head>
 
   <body>
@@ -34,13 +34,13 @@
     
     <ul class="left">
       
-        <li><a href="/categories/activemq">activemq</a>
+        <li><a href="/topics/hawtio">hawtio</a>
       
     </ul>
     <ul class="right">
-      <li><a href="https://twitter.com/share?url=https%3a%2f%2fjimmidyson.github.io%2fblog%2fhello%2f&via=jimmidyson&text=Hello" target="_blank"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=https%3a%2f%2fjimmidyson.github.io%2fblog%2fhello%2f" target="_blank"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="https://plus.google.com/share?url=https%3a%2f%2fjimmidyson.github.io%2fblog%2fhello%2f" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="https://twitter.com/share?url=%2ftags%2fopenshift%2f&via=jimmidyson&text=Openshift" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=%2ftags%2fopenshift%2f" target="_blank"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="https://plus.google.com/share?url=%2ftags%2fopenshift%2f" target="_blank"><i class="fa fa-google-plus"></i></a></li>
     </ul>
   </section>
 </nav>
@@ -48,44 +48,15 @@
     <section id="main">
       <div class="row">
         <div class="large-12 columns text-center">
-          <h1 class="title">Hello</h1>
-          <article class="post text-left">
-            <header>
-              <div class="post-meta">Tue, Jul 22, 2014</div>
-                <div id="categories">
-                
-                </div>
-                <div id="tags">
-                
-                </div>
+          <h1 class="title">Openshift</h1>
+          
+            <article class="post text-left">
+              <header>
+                <a href="/hawtio-on-OpenShift/">hawtio on OpenShift</a>
+                <div class="right">Tue, Sep 30, 2014</div>
               </header>
-              <section>
-                <p>
-                  
-                </p>
-            </header>
-            <section>
-              
-            </section>
-          </article>
-          <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    if (window.location.hostname == "localhost") 
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'jimmidyson';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
+            </article>
+          
         </div>
       </div>
     </section>
@@ -110,9 +81,13 @@
 </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/js/foundation.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
 <script>
   $(document).foundation();
+  hljs.initHighlightingOnLoad();
+  $('code.language-nohighlight').addClass('hljs');
 </script>
 
   </body>
 </html>
+

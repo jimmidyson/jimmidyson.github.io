@@ -1,22 +1,42 @@
-contentdir = "content"
-layoutdir =  "layouts"
-publishdir =  "public"
-builddrafts =  false
-baseurl =  "https://jimmidyson.github.io"
-canonifyurls = true
 title = "Streaming thoughts"
+languageCode = "en-gb"
+disqusShortname = "jimmidyson"
+MetaDataFormat = "toml"
 
-PygmentsUseClasses = true
-
-[Taxonomies]
-  category = "categories"
-  tag = "tags"
+[author]
+    name = "Jimmi Dyson"
 
 [permalinks]
-  post = "/blog/:title/"
+    # Change the permalink format for the 'post' content type.
+    post = "/:title/"
 
 [params]
-  AuthorName = "Jimmi Dyson"
-  GitHubUser = "jimmidyson"
-  SidebarRecentLimit = 5
-  disqusShortname = "jimmidyson"
+    # Default page metadata, used when the specific page doesn't set its own.
+    defaultDescription = "Current projects & general musings"
+    defaultKeywords = "jimmi dyson,home,website,blog"
+
+    # Changes sidebar background and link/accent colours.
+    # This also works: "theme-base-0c layout-reverse", or just "layout-reverse".
+  theme = "theme-base-0c"
+
+    # Select a syntax highight.
+    highlight = "solarized_light"
+
+    # Tagline to display under the author name in the sidebar, keep it short.
+    tagline = "Current projects & general musings"
+
+    # Metadata used to drive integrations.
+    googleAuthorship = "116158239234656634929"
+    googleAnalytics = "UA-44918664-1"
+    gravatarHash = "c8ab87dec9a30fdb3b8c7c9d0d6f92a9"
+
+    # Sidebar social links, avoid enabling too many of these if possible.
+    github = "https://github.com/jimmidyson"
+    linkedin = "http://www.linkedin.com/in/jimmidyson"
+    googleplus = ""
+    facebook = ""
+    twitter = "https://twitter.com/jimmidyson"
+
+[indexes]
+    tag = "tags"
+    topic = "topics"
