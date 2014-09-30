@@ -7,7 +7,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Streaming thoughts</title>
+  <title>hawtio on OpenShift | Streaming thoughts</title>
   
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fjalla+One" />
@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/js/vendor/modernizr.js"></script>
   <base href="" />
-  <link rel="canonical" href="/" />
-  <link href="/index.xml/" rel="alternate" type="application/rss+xml" title="Streaming thoughts" />
+  <link rel="canonical" href="/hawtio-on-OpenShift/" />
+  
 </head>
 
   <body>
@@ -38,9 +38,9 @@
       
     </ul>
     <ul class="right">
-      <li><a href="https://twitter.com/share?url=%2f&via=jimmidyson&text=Streaming%20thoughts" target="_blank"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=%2f" target="_blank"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="https://plus.google.com/share?url=%2f" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="https://twitter.com/share?url=%2fhawtio-on-OpenShift%2f&via=jimmidyson&text=hawtio%20on%20OpenShift" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=%2fhawtio-on-OpenShift%2f" target="_blank"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="https://plus.google.com/share?url=%2fhawtio-on-OpenShift%2f" target="_blank"><i class="fa fa-google-plus"></i></a></li>
     </ul>
   </section>
 </nav>
@@ -48,12 +48,10 @@
     <section id="main">
       <div class="row">
         <div class="large-12 columns text-center">
-          <h1 class="title">Streaming thoughts</h1>
-          
-            <article class="post text-left">
-              <header>
-                <h2><a href="/hawtio-on-OpenShift/">hawtio on OpenShift</a></h2>
-                <div class="post-meta">Tue, Sep 30, 2014</div>
+          <h1 class="title">hawtio on OpenShift</h1>
+          <article class="post text-left">
+            <header>
+              <div class="post-meta">Tue, Sep 30, 2014</div>
                 <div id="categories">
                 
                   <a href="/topics/hawtio"><span class="label">hawtio</span></a>
@@ -66,7 +64,12 @@
                 </div>
               </header>
               <section>
-                <p>If you haven&rsquo;t heard of it yet, <a href="http://hawt.io" title="hawtio - a JBoss project">hawtio</a> is pretty cool.
+                <p>
+                  If you haven&rsquo;t heard of it yet, hawtio is pretty cool. It&rsquo;s an open source web console for managing your Java stuff, with loads of plugins already available &amp; really simple to write your own (&amp; hopefully contribute back). In one of my recent projects, I was using OpenShift for deployment &amp; wanted to use hawtio to manage my application. It&rsquo;s pretty easy to get it going because, as PaaSes go, OpenShift is fantastically configurable.
+                </p>
+            </header>
+            <section>
+              <p>If you haven&rsquo;t heard of it yet, <a href="http://hawt.io" title="hawtio - a JBoss project">hawtio</a> is pretty cool.
 It&rsquo;s an open source web console for managing your Java stuff, with loads of plugins
 already available &amp; really simple to write your own (&amp; hopefully contribute
 back). In one of my recent projects, I was using <a href="https://www.openshift.com/" title="OpenShift by Red Hat">OpenShift</a>
@@ -207,12 +210,26 @@ around, see what you can do - it really is such a useful application.</p>
 minutes from beginning to end. Hawtio is similarly easy to deploy in any of your applications, from
 standalone Java apps to apps deployed on J2EE application servers, super flexible, super useful.</p>
 
-              </section>
-              <footer>
-                <a href="/hawtio-on-OpenShift/">Read more →</a>
-              </footer>
-            </article>
-          
+            </section>
+          </article>
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = '';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
         </div>
       </div>
     </section>

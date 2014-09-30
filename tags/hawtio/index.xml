@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Posts on Streaming thoughts </title>
+      <title>Hawtio on Streaming thoughts </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>/post/index.xml/</link>
+    <link>/tags/hawtio/index.xml/</link>
     <language>en-gb</language>
     <author>Jimmi Dyson</author>
     
