@@ -11,14 +11,13 @@
           <article class="post text-left">
             <header>
               <div class="post-meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
-                <div id="categories">
-                {{ range .Params.topics }}
-                  <a href="{{ $baseurl }}/topics/{{ . | urlize | lower }}"><span class="label">{{ . }}</span></a>
-                {{ end }}
-                {{ range .Params.tags }}
-                  <a href="{{ $baseurl }}/tags/{{ . | urlize | lower }}"><span class="label secondary">#{{ . }}</span></a>
-                {{ end }}
-                </div>
+              <div id="categories">
+              {{ range .Params.topics }}
+                <a href="{{ $baseurl }}/topics/{{ . | urlize | lower }}"><span class="label">{{ . }}</span></a>
+              {{ end }}
+              {{ range .Params.tags }}
+                <a href="{{ $baseurl }}/tags/{{ . | urlize | lower }}"><span class="label secondary">#{{ . }}</span></a>
+              {{ end }}
               </div>
             </header>
             <section>
