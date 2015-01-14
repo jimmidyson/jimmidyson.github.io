@@ -3,7 +3,7 @@
   <channel>
       <title>Recent Content on Streaming thoughts </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/index.xml/</link>
+    <link>/index.xml/</link>
     <language>en-gb</language>
     <author>Jimmi Dyson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>hawtio on OpenShift</title>
-      <link>http://localhost:1313/hawtio-on-OpenShift/</link>
+      <link>/hawtio-on-OpenShift/</link>
       <pubDate>Tue, 30 Sep 2014 09:47:47 BST</pubDate>
       <author>Jimmi Dyson</author>
-      <guid>http://localhost:1313/hawtio-on-OpenShift/</guid>
+      <guid>/hawtio-on-OpenShift/</guid>
       <description>&lt;p&gt;If you haven&amp;rsquo;t heard of it yet, &lt;a href=&#34;http://hawt.io&#34; title=&#34;hawtio - a JBoss project&#34;&gt;hawtio&lt;/a&gt; is pretty cool.
 It&amp;rsquo;s an open source web console for managing your Java stuff, with loads of plugins
 already available &amp;amp; really simple to write your own (&amp;amp; hopefully contribute
