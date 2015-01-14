@@ -5,4 +5,4 @@ topics = [ "fabric8" ]
 tags = [ "fabric8" ]
 +++
 
-{{% preso src="http://jimmidyson.github.io/presentations/fabric8v2.html" %}}
+{{% preso src="//jimmidyson.github.io/presentations/fabric8v2.html" %}}
