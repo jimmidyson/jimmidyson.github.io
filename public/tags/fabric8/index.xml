@@ -3,7 +3,7 @@
   <channel>
       <title>Fabric8 on Streaming thoughts </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/tags/fabric8/index.xml/</link>
+    <link>/tags/fabric8/index.xml/</link>
     <language>en-gb</language>
     <author>Jimmi Dyson</author>
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Fabric8 V2</title>
-      <link>http://localhost:1313/Fabric8-V2/</link>
+      <link>/Fabric8-V2/</link>
       <pubDate>Wed, 14 Jan 2015 10:37:47 &#43;0100</pubDate>
       <author>Jimmi Dyson</author>
-      <guid>http://localhost:1313/Fabric8-V2/</guid>
+      <guid>/Fabric8-V2/</guid>
       <description>&lt;div class=&#34;presentation&#34;&gt;
   &lt;iframe src=&#34;http://jimmidyson.github.io/presentations/fabric8v2.html&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
