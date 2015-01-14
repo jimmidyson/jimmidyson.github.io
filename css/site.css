@@ -82,3 +82,9 @@ div.highlight {
   padding:1em;
   font-size: 90%;
 }
+div.presentation {
+  position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;
+}
+div.presentation iframe {
+  position: absolute;top: 0;left: 0;width: 100%;height: 100%;
+}
