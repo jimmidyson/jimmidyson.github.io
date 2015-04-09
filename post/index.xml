@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Posts on Streaming thoughts </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>/post/index.xml/</link>
+    <title>Posts on Streaming thoughts</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Streaming thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <author>Jimmi Dyson</author>
-    
-    <updated>Wed, 14 Jan 2015 10:37:47 &#43;0100</updated>
+    <lastBuildDate>Wed, 14 Jan 2015 10:37:47 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Fabric8 V2</title>
-      <link>/Fabric8-V2/</link>
-      <pubDate>Wed, 14 Jan 2015 10:37:47 &#43;0100</pubDate>
-      <author>Jimmi Dyson</author>
-      <guid>/Fabric8-V2/</guid>
-      <description>&lt;div class=&#34;presentation&#34;&gt;
+      <link>http://localhost:1313/fabric8-v2/</link>
+      <pubDate>Wed, 14 Jan 2015 10:37:47 +0100</pubDate>
+      
+      <guid>http://localhost:1313/fabric8-v2/</guid>
+      <description>&lt;p&gt;&lt;div class=&#34;presentation&#34;&gt;
   &lt;iframe src=&#34;//jimmidyson.github.io/presentations/fabric8v2.html&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
+
+&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>hawtio on OpenShift</title>
-      <link>/hawtio-on-OpenShift/</link>
-      <pubDate>Tue, 30 Sep 2014 09:47:47 BST</pubDate>
-      <author>Jimmi Dyson</author>
-      <guid>/hawtio-on-OpenShift/</guid>
+      <link>http://localhost:1313/hawtio-on-openshift/</link>
+      <pubDate>Tue, 30 Sep 2014 09:47:47 +0100</pubDate>
+      
+      <guid>http://localhost:1313/hawtio-on-openshift/</guid>
       <description>&lt;p&gt;If you haven&amp;rsquo;t heard of it yet, &lt;a href=&#34;http://hawt.io&#34; title=&#34;hawtio - a JBoss project&#34;&gt;hawtio&lt;/a&gt; is pretty cool.
 It&amp;rsquo;s an open source web console for managing your Java stuff, with loads of plugins
 already available &amp;amp; really simple to write your own (&amp;amp; hopefully contribute

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <base href="" />
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  <title></title>
+  
+  <meta name="description" content="" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="" />
+
+  <link rel="shortcut icon" href="http://localhost:1313/assets/images/favicon.ico">
+  <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="http://localhost:1313/css/print.css" />
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'jimmidyson.github.io');
+  ga('require', 'linkid', 'linkid.js');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+  <body itemscope itemtype="http://schema.org/Article">
+    
+    <main class="content" role="main">
+      <article class="post">
+        
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">Fabric8 V2</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Jimmi Dyson</h4>
+              on
+              <time datetime="Wed, Jan 14, 2015">Wed, Jan 14, 2015</time>
+            </div>
+          </div>
+        </div>
+        
+        <section class="post-content">
+          <div class="post-reading">
+            <span class="post-reading-time"></span> read
+          </div>
+          <a name="topofpage"></a>
+          <p><div class="presentation">
+  <iframe src="//jimmidyson.github.io/presentations/fabric8v2.html" frameborder="0"></iframe>
+</div>
+
+</p>
+
+        </section>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <section class="author">
+              <div class="author-image" style="background-image: url(http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png)">Blog Logo</div>
+              <h4>Jimmi Dyson</h4>
+              <p class="bio"></p>
+              <hr>
+              <p class="published">Published <time datetime="Wed, Jan 14, 2015">Wed, Jan 14, 2015</time></p>
+            </section>
+          </div>
+          <div class="isRight">
+            <h5 class="index-headline featured"></span></h5>
+            <footer class="site-footer">
+              <section class="poweredby">
+                <a href="https://gohugo.io/">
+                  <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://localhost:1313/img/hugo-logo.png" />
+                </a><br />
+                Built with <a href="httpis://gohugo.io/">Hugo</a>.
+              </section>
+            </footer>
+          </div>
+        </div>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url(/img/cover.jpg)">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Streaming thoughts</h1>
+        <h2 class="blog-description">Current projects &amp; general musings</h2>
+        <a href="http://localhost:1313/" class="btn">Back to Overview</a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/readingTime.min.js"></script>
+<script>
+(function ($) {
+  "use strict";
+  $(document).ready(function(){
+
+    var $window = $(window),
+    $image = $('.post-image-image, .teaserimage-image');
+
+      $window.on('scroll', function() {
+        var top = $window.scrollTop();
+
+        if (top < 0 || top > 1500) { return; }
+        $image
+          .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+          .css('opacity', 1-Math.max(top/700, 0));
+      });
+      $window.trigger('scroll');
+
+      var height = $('.article-image').height();
+      $('.post-content').css('padding-top', height + 'px');
+
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+         && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({ scrollTop: target.offset().top }, 500);
+            return false;
+          }
+        }
+      });
+
+  });
+}(jQuery));
+</script>
+
+
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
