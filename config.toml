@@ -1,15 +1,23 @@
 title = "Streaming thoughts"
 languageCode = "en-gb"
 MetaDataFormat = "toml"
+baseurl = "http://jimmidyson.github.io/"
+canonifyurls = true
 
 [author]
     name = "Jimmi Dyson"
+    image = "http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png"
+
+[author.social]
+  twitter = "https://twitter.com/jimmidyson"
+  github = "https://github.com/jimmidyson"
 
 [permalinks]
     # Change the permalink format for the 'post' content type.
     post = "/:title/"
 
 [params]
+
     # Default page metadata, used when the specific page doesn't set its own.
     defaultDescription = "Current projects & general musings"
     defaultKeywords = "jimmi dyson,home,website,blog"
@@ -29,15 +37,6 @@ MetaDataFormat = "toml"
     # Metadata used to drive integrations.
     googleAuthorship = "116158239234656634929"
     googleAnalytics = "UA-44918664-1"
-    gravatarHash = "c8ab87dec9a30fdb3b8c7c9d0d6f92a9"
 
-    # Sidebar social links, avoid enabling too many of these if possible.
-    github = "https://github.com/jimmidyson"
-    linkedin = "http://www.linkedin.com/in/jimmidyson"
-    googleplus = ""
-    facebook = ""
-    twitter = "https://twitter.com/jimmidyson"
+    cover = "/img/cover.jpg"
 
-[indexes]
-    tag = "tags"
-    topic = "topics"

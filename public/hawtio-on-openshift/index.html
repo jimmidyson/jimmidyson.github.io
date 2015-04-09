@@ -40,74 +40,29 @@
 
 </head>
 
-  <body>
+  <body itemscope itemtype="http://schema.org/Article">
     
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="teaserimage">
-          <div class="teaserimage-image" style="background-image: url(/img/cover.jpg)">
-            Teaser Image
-          </div>
-        </div>
-
-<header class="blog-header">
-    
-    <h1 class="blog-title">Streaming thoughts</h1>
-    <h2 class="blog-description">Current projects &amp; general musings</h2>
-    <div class="custom-links">
-      
+    <main class="content" role="main">
+      <article class="post">
         
-          <a class="icon-github" href="https://github.com/jimmidyson">
-            <i class="fa fa-github"></i>
-          </a>
-          &nbsp;&nbsp;·&nbsp;&nbsp;
-        
-      
-        
-          <a class="icon-twitter" href="https://twitter.com/jimmidyson">
-            <i class="fa fa-twitter"></i>
-          </a>
-          &nbsp;&nbsp;·&nbsp;&nbsp;
-        
-      
-      <a href="http://localhost:1313/about/">About</a>
-    </div>
-</header>
-
-
-<main class="content" role="main">
-
-    
-
-    <div class="cf frame">
-      
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="http://localhost:1313/fabric8-v2" itemprop="url">Fabric8 V2</a></h2>
-            </header>
-            <section class="post-content" itemprop="description">
-              <p><p><div class="presentation">
-  <iframe src="//jimmidyson.github.io/presentations/fabric8v2.html" frameborder="0"></iframe>
-</div>
-
-</p>
-</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="Wed, Jan 14, 2015">Wed, Jan 14, 2015</time>
-              <a class="read-more-link" href="http://localhost:1313/fabric8-v2">Continue reading…</a>
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">hawtio on OpenShift</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Jimmi Dyson</h4>
+              on
+              <time datetime="Tue, Sep 30, 2014">Tue, Sep 30, 2014</time>
             </div>
           </div>
-        </article>
-      
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="http://localhost:1313/hawtio-on-openshift" itemprop="url">hawtio on OpenShift</a></h2>
-            </header>
-            <section class="post-content" itemprop="description">
-              <p><p>If you haven&rsquo;t heard of it yet, <a href="http://hawt.io" title="hawtio - a JBoss project">hawtio</a> is pretty cool.
+        </div>
+        
+        <section class="post-content">
+          <div class="post-reading">
+            <span class="post-reading-time"></span> read
+          </div>
+          <a name="topofpage"></a>
+          <p>If you haven&rsquo;t heard of it yet, <a href="http://hawt.io" title="hawtio - a JBoss project">hawtio</a> is pretty cool.
 It&rsquo;s an open source web console for managing your Java stuff, with loads of plugins
 already available &amp; really simple to write your own (&amp; hopefully contribute
 back). In one of my recent projects, I was using <a href="https://www.openshift.com/" title="OpenShift by Red Hat">OpenShift</a>
@@ -247,29 +202,44 @@ around, see what you can do - it really is such a useful application.</p>
 <p>I hope that seemed pretty easy to you - a lot of writing here for something that literally takes 5
 minutes from beginning to end. Hawtio is similarly easy to deploy in any of your applications, from
 standalone Java apps to apps deployed on J2EE application servers, super flexible, super useful.</p>
-</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="Tue, Sep 30, 2014">Tue, Sep 30, 2014</time>
-              <a class="read-more-link" href="http://localhost:1313/hawtio-on-openshift">Continue reading…</a>
-            </div>
-          </div>
-        </article>
-      
-    </div>
-</main>
-<footer class="site-footer">
-  <div class="inner">
-    <section class="poweredby">
-      <a href="http://hugo.spf13.com/">
-        <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://localhost:1313/img/hugo-logo.png" />
-      </a><br />
-      Built with <a href="http://hugo.spf13.com/">Hugo</a>.
-    </section>
-  </div>
-</footer>
 
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        </section>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <section class="author">
+              <div class="author-image" style="background-image: url(http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png)">Blog Logo</div>
+              <h4>Jimmi Dyson</h4>
+              <p class="bio"></p>
+              <hr>
+              <p class="published">Published <time datetime="Tue, Sep 30, 2014">Tue, Sep 30, 2014</time></p>
+            </section>
+          </div>
+          <div class="isRight">
+            <h5 class="index-headline featured"></span></h5>
+            <footer class="site-footer">
+              <section class="poweredby">
+                <a href="https://gohugo.io/">
+                  <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://localhost:1313/img/hugo-logo.png" />
+                </a><br />
+                Built with <a href="httpis://gohugo.io/">Hugo</a>.
+              </section>
+            </footer>
+          </div>
+        </div>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url(/img/cover.jpg)">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Streaming thoughts</h1>
+        <h2 class="blog-description">Current projects &amp; general musings</h2>
+        <a href="http://localhost:1313/" class="btn">Back to Overview</a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
 <script type="text/javascript" src="http://localhost:1313/js/readingTime.min.js"></script>
@@ -311,3 +281,8 @@ standalone Java apps to apps deployed on J2EE application servers, super flexibl
 </script>
 
 
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

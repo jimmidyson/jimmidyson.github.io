@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  {{ partial "head.html" }}
+  <body>
+    {{ partial "header.html" }}
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="teaserimage">
+          <div class="teaserimage-image" {{ if .Site.Params.cover }}style="background-image: url({{ .Site.Params.cover }})"{{ end }}>
+            Teaser Image
+          </div>
+        </div>
+
+<header class="blog-header">
+    {{ if .Site.Params.logo }}
+      <a class="blog-logo" href="{{ .Site.BaseURL }}" style="background-image: url('{{ .Site.Params.logo }}')">{{ .Site.Title }}</a>
+    {{ end }}
+    <h1 class="blog-title">{{ .Site.Title }}</h1>
+    <h2 class="blog-description">{{ .Site.Params.defaultDescription }}</h2>
+    <div class="custom-links">
+      {{ range $type, $url := .Site.Author.social }}
+        {{ if $url }}
+          <a class="icon-{{ $type }}" href="{{ $url }}">
+            <i class="fa fa-{{ $type }}"></i>
+          </a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+        {{ end }}
+      {{ end }}
+      <a href="/about/">About</a>
+    </div>
+</header>
+
+
+<main class="content" role="main">
+
+    {{ if .Site.Taxonomies.featured }}
+    <h5 class="index-headline featured"><span>Featured</span></h5>
+
+    <div class="container featured">
+      {{ range .Site.Taxonomies.featured }}
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+          <div class="article-item">
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name"><a href="{{ .RelPermalink }}" itemprop="url">{{ .Title }}</a></h2>
+            </header>
+            <section class="post-content" itemprop="description">
+              <p>{{ .Content }}</p>
+            </section>
+            <div class="post-meta">
+              <time datetime="{{ .Date.Format "Mon, Jan 2, 2006" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+              {{ if .Truncated }}
+                <a class="read-more-link" href="{{ .RelPermalink }}">Continue reading…</a>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+
+    <h5 class="index-headline normal"><span>Regular</span></h5>
+    {{ end }}
+
+    <div class="cf frame">
+      {{ range first 10 .Data.Pages }}
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+          <div class="article-item">
+            <header class="post-header">
+              <h2 class="post-title" itemprop="name"><a href="{{ .RelPermalink }}" itemprop="url">{{ .Title }}</a></h2>
+            </header>
+            <section class="post-content" itemprop="description">
+              <p>{{ .Content }}</p>
+            </section>
+            <div class="post-meta">
+              <time datetime="{{ .Date.Format "Mon, Jan 2, 2006" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+              <a class="read-more-link" href="{{ .RelPermalink }}">Continue reading…</a>
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+</main>
+{{ partial "footer.html" }}
+{{ partial "javascripts.html" }}
