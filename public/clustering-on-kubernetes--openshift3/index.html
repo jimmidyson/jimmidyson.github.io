@@ -20,12 +20,12 @@
 
   <link rel="canonical" href="" />
 
-  <link rel="shortcut icon" href="http://jimmidyson.github.io/assets/images/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="http://jimmidyson.github.io/css/main.css" />
-  <link rel="stylesheet" type="text/css" media="print" href="http://jimmidyson.github.io/css/print.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="http://localhost:1313/css/print.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
   
   <script>
@@ -48,12 +48,12 @@
         
         <div class="noarticleimage">
           <div class="post-meta">
-            <h1 class="post-title">Fabric8 V2</h1>
+            <h1 class="post-title">Clustering on Kubernetes &amp; OpenShift3</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url(http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png)">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Jimmi Dyson</h4>
               on
-              <time datetime="Wed, Jan 14, 2015">Wed, Jan 14, 2015</time>
+              <time datetime="Thu, Apr 9, 2015">Thu, Apr 9, 2015</time>
             </div>
           </div>
         </div>
@@ -63,11 +63,41 @@
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <p><div class="presentation">
-  <iframe src="//jimmidyson.github.io/presentations/fabric8v2.html" frameborder="0"></iframe>
-</div>
+          <p>One of the big promises of Kubernetes &amp; OpenShift3 is really easy management of your
+containerised applications. For standalone or load-balanced stateless applications,
+Kubernetes works brilliantly, but one thing that I had a bit of trouble figuring
+out was how do perform cluster discovery for my applications? Say one of my applications
+needs to know about at least one other node (seed node) that it should join a cluster with.
+I&rsquo;m going to use Elasticsearch through this post as it&rsquo;s awesome horizontal scalability
+lends itself very well to hopefully explaining this clearly. This is a real
+example that we provide as part of Fabric8 to build up Elasticsearch clusters.</p>
 
-</p>
+<p>Before we go any further, a quick recap of 3 Kubernetes concepts we&rsquo;ll be using
+in this post (taken from the excellent Kubernetes documentation):</p>
+
+<ol>
+<li><em>Pods</em> are the smallest deployable units that can be created, scheduled,
+and managed. Pods are a colocated group of containers that run on the same
+physical host &amp; share stuff like network space (e.g. IP address) &amp; disk (via volumes). <a href="https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/pods.md">Read more</a></li>
+<li><em>Replication controllers</em> (RCs) ensure that a
+specified number of pod &ldquo;replicas&rdquo; are running at any one time. If there are
+too many, it will kill some. If there are too few, it will start more.
+<a href="https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/replication-controller.md">Read more</a></li>
+<li><em>Services</em> are an abstraction which defines a logical set of Pods
+and a policy by which to access them. The
+set of Pods targeted by a Service is determined by a Label Selector. A service is used to access a group of pods through a consistent
+endpoint without knowing the exact pods, especially important considering the
+ephemeral nature of pods. <a href="https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md">Read more</a></li>
+</ol>
+
+<p>I&rsquo;m going to assume you have a working Kubernetes cluster up &amp; running. If you
+don&rsquo;t then you can really easily set one up on any Docker-enabled host via a
+script that Fabric8 provides (see
+<a href="http://fabric8.io/guide/openShiftDocker.html#run-the-start-script">here</a> if
+you&rsquo;re interested). Note that the script will actually spin up OpenShift3
+rather than vanilla Kubernetes as Fabric8 uses some of the extensions that
+OpenShift provides, like builds, deployment pipelines, etc for other things.
+Everything below will work on vanilla Kubernetes of course.</p>
 
         </section>
         <div class="bottom-teaser cf">
@@ -78,7 +108,7 @@
               <h4>Jimmi Dyson</h4>
               <p class="bio"></p>
               <hr>
-              <p class="published">Published <time datetime="Wed, Jan 14, 2015">Wed, Jan 14, 2015</time></p>
+              <p class="published">Published <time datetime="Thu, Apr 9, 2015">Thu, Apr 9, 2015</time></p>
             </section>
           </div>
           <div class="isRight">
@@ -86,7 +116,7 @@
             <footer class="site-footer">
               <section class="poweredby">
                 <a href="https://gohugo.io/">
-                  <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://jimmidyson.github.io/img/hugo-logo.png" />
+                  <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://localhost:1313/img/hugo-logo.png" />
                 </a><br />
                 Built with <a href="httpis://gohugo.io/">Hugo</a>.
               </section>
@@ -102,14 +132,14 @@
       <div class="inner">
         <h1 class="blog-title">Streaming thoughts</h1>
         <h2 class="blog-description">Current projects &amp; general musings</h2>
-        <a href="http://jimmidyson.github.io/" class="btn">Back to Overview</a>
+        <a href="http://localhost:1313/" class="btn">Back to Overview</a>
       </div>
     </div>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-<script type="text/javascript" src="http://jimmidyson.github.io/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="http://jimmidyson.github.io/js/index.js"></script>
-<script type="text/javascript" src="http://jimmidyson.github.io/js/readingTime.min.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/readingTime.min.js"></script>
 <script>
 (function ($) {
   "use strict";
@@ -150,5 +180,8 @@
 </script>
 
 
-  </body>
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

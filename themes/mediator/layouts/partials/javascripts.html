@@ -1,4 +1,5 @@
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
 <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>
 <script type="text/javascript" src="/js/readingTime.min.js"></script>
@@ -36,6 +37,8 @@
       });
 
   });
+  hljs.initHighlightingOnLoad();
+  $('code.language-nohighlight').addClass('hljs');
 }(jQuery));
 </script>
 
