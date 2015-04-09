@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hawtio on Streaming thoughts</title>
-    <link>http://localhost:1313/tags/hawtio/</link>
+    <link>http://jimmidyson.github.io/tags/hawtio/</link>
     <description>Recent content in Hawtio on Streaming thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Tue, 30 Sep 2014 09:47:47 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hawtio/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jimmidyson.github.io/tags/hawtio/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hawtio on OpenShift</title>
-      <link>http://localhost:1313/hawtio-on-openshift/</link>
+      <link>http://jimmidyson.github.io/hawtio-on-openshift/</link>
       <pubDate>Tue, 30 Sep 2014 09:47:47 +0100</pubDate>
       
-      <guid>http://localhost:1313/hawtio-on-openshift/</guid>
+      <guid>http://jimmidyson.github.io/hawtio-on-openshift/</guid>
       <description>&lt;p&gt;If you haven&amp;rsquo;t heard of it yet, &lt;a href=&#34;http://hawt.io&#34; title=&#34;hawtio - a JBoss project&#34;&gt;hawtio&lt;/a&gt; is pretty cool.
 It&amp;rsquo;s an open source web console for managing your Java stuff, with loads of plugins
 already available &amp;amp; really simple to write your own (&amp;amp; hopefully contribute
