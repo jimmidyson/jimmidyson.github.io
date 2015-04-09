@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/jimmidyson
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jimmidyson.github.io
+  * I am jimmidyson (https://keybase.io/jimmidyson) on keybase.
+  * I have a public key with fingerprint 5E87 7349 6DCB FB12 0E38  4322 2863 494B 281B E805
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "5e8773496dcbfb120e3843222863494b281be805",
+            "host": "keybase.io",
+            "key_id": "2863494b281be805",
+            "kid": "0101a54ad13931e55a8664d2986a10778b51da794555af1b30c45ae7cf306c4ebe440a",
+            "uid": "ca33f451e7021026b12f0ef256a90300",
+            "username": "jimmidyson"
+        },
+        "service": {
+            "hostname": "jimmidyson.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1428248779,
+    "expire_in": 157680000,
+    "prev": "50fcd091e2d98dd16856611a2266f5fbf7ee08de56abf67d000fccd11d097d4a",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMIcAnicbVJbSBRRGN7VUtxUjCwhC3Kgi2FyzlzOzK5QlAiZ0EUL0ty2mTln9HiZ
+XXdnvWBakpQPbZDagw+yZmCCQWCYRUSWXbwUGUQ9hD3UU1GGrfZQgZ2xeqrzcjjf
+/33ffzn/w5R4h8s5cLIsrzANlzun7xeFHUeyjk43c5ofN3GeZq6aLF8GNStIMBCk
+psV5OIkosiyIboR1zdAgD4igiALP8wpiqKjxCtSIAiQuh6v0h2wFs9HUEMmlfoax
+h49ihv6HX70cABBAVRJVDAW3AIkkqQpCIubdClIhkGVFkyBWZbcosZABNQHooqQS
+WTcEgHSRaEQUgcrswst2uioIhihBIgMeAh6xkg1ADF5CqhsIANjEEAmaai1h7Cpa
+W0txU8hvci05HMPrqU7sIdi9/MPJraBWZVj73Vkg6Lf8ur+GMSotKxDy2A5WU8CW
+NBDN98fMp1ETs4kyRT0JhijL5IGMqVvUdocir/AiG7E7hyONARokPmozJBkpgB07
+D6m3/wEYOgZuSHjsVjCGSJEQglDleYQMydAMmRCgYML61AwkY6Y1dB1DyEQyFu0B
+hUid6ec8AitTrWCWIVphqlY4SLiWB2PlKxxOlyNhZZy9Ew5XUtrfTXkTSVyqjvTf
+DYxHLnE13NY+77OyUe/6WXN1rO9CX1n3gfnkV4Vbaqc/7aMnFkFeVEjoik51pO+c
+a8kfG0YJiQXj7anm7cmcjTf08LdUk5Y2Lna2zeZtn/FOfFfqQHfm16Qzs6djL+J2
+d0o3L8tfyret7dg1WFSwaiaYfH7w7XxunPW6pPjR8LtIdsbS/vTPxR9L6ht60Ujy
+j4mfznx6a0/rwciVqtHjfWc3b2ov1lPkx/fiY+diGdf75aQdGYlFQC4pbWstanw/
+9GHp1Ibn3DplYeFp68jexOIh78vhOVf6k7oBdOhY9M6ahMkZV0o0M1/sIYcXqrN6
+L2Z3TV2Tr/b4lF9oqCH0
+=mFqD
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jimmidyson
+
+==================================================================
