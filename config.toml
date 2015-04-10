@@ -22,13 +22,6 @@ canonifyurls = true
     defaultDescription = "Current projects & general musings"
     defaultKeywords = "jimmi dyson,home,website,blog"
 
-    # Changes sidebar background and link/accent colours.
-    # This also works: "theme-base-0c layout-reverse", or just "layout-reverse".
-    theme = "theme-base-0c"
-
-    # Select a syntax highight.
-    highlight = "solarized_light"
-
     disqusShortname = "jimmidyson"
 
     # Tagline to display under the author name in the sidebar, keep it short.
@@ -38,5 +31,5 @@ canonifyurls = true
     googleAuthorship = "116158239234656634929"
     googleAnalytics = "UA-44918664-1"
 
-    cover = "/img/cover.jpg"
+    #cover = "/img/cover.jpg"
 

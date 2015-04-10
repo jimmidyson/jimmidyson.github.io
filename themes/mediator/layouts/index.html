@@ -5,11 +5,13 @@
     {{ partial "header.html" }}
     <div class="page-content">
       <div class="wrapper">
+        {{ if .Site.Params.cover }}
         <div class="teaserimage">
           <div class="teaserimage-image" {{ if .Site.Params.cover }}style="background-image: url({{ .Site.Params.cover }})"{{ end }}>
             Teaser Image
           </div>
         </div>
+        {{ end }}
 
 <header class="blog-header">
     {{ if .Site.Params.logo }}
