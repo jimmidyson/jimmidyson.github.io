@@ -41,50 +41,29 @@
 
 </head>
 
-  <body>
+  <body itemscope itemtype="http://schema.org/Article">
     
-    <div class="page-content">
-      <div class="wrapper">
+    <main class="content" role="main">
+      <article class="post">
         
-
-<header class="blog-header">
-    
-    <h1 class="blog-title">Streaming thoughts</h1>
-    <h2 class="blog-description">Current projects &amp; general musings</h2>
-    <div class="custom-links">
-      
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">Clustering on Kubernetes &amp; OpenShift3 using DNS</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Jimmi Dyson</h4>
+              on
+              <time datetime="2015-04-09T15:24:56&#43;01:00">Thu, Apr 9, 2015</time>
+            </div>
+          </div>
+        </div>
         
-          <a class="icon-github" href="https://github.com/jimmidyson">
-            <i class="fa fa-github"></i>
-          </a>
-          &nbsp;&nbsp;·&nbsp;&nbsp;
-        
-      
-        
-          <a class="icon-twitter" href="https://twitter.com/jimmidyson">
-            <i class="fa fa-twitter"></i>
-          </a>
-          &nbsp;&nbsp;·&nbsp;&nbsp;
-        
-      
-      <a href="http://jimmidyson.github.io/about/">About</a>
-    </div>
-</header>
-
-
-<main class="content" role="main">
-
-    
-
-    <div class="cf frame">
-      
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="http://jimmidyson.github.io/clustering-on-kubernetes--openshift3-using-dns" itemprop="url">Clustering on Kubernetes &amp; OpenShift3 using DNS</a></h2>
-            </header>
-            <section class="post-content" itemprop="description">
-              <p>
+        <section class="post-content">
+          <div class="post-reading">
+            <span class="post-reading-time"></span> read
+          </div>
+          <a name="topofpage"></a>
+          
 
 <h2 id="tl-dr:cb8b5430a876f081248526000f46aff3">tl;dr</h2>
 
@@ -339,204 +318,44 @@ credentials to be distributed using DNS.</p>
 
 <p>Now play with resizing each of the 3 node types &amp; see what happens - easy cluster
 resizing FTW.</p>
-</p>
+
+        </section>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <section class="author">
+              <div class="author-image" style="background-image: url(http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png)">Blog Logo</div>
+              <h4>Jimmi Dyson</h4>
+              <p class="bio"></p>
+              <hr>
+              <p class="published">Published <time datetime="2015-04-09T15:24:56&#43;01:00">Thu, Apr 9, 2015</time></p>
             </section>
-            <div class="post-meta">
-              <time datetime="2015-04-09T15:24:56&#43;01:00">Thu, Apr 9, 2015</time>
-              <a class="read-more-link" href="http://jimmidyson.github.io/clustering-on-kubernetes--openshift3-using-dns">Continue reading…</a>
-            </div>
           </div>
-        </article>
-      
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="http://jimmidyson.github.io/fabric8-v2" itemprop="url">Fabric8 V2</a></h2>
-            </header>
-            <section class="post-content" itemprop="description">
-              <p><p><div class="presentation">
-  <iframe src="//jimmidyson.github.io/presentations/fabric8v2.html" frameborder="0"></iframe>
-</div>
-
-</p>
-</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="2015-01-14T10:37:47&#43;01:00">Wed, Jan 14, 2015</time>
-              <a class="read-more-link" href="http://jimmidyson.github.io/fabric8-v2">Continue reading…</a>
-            </div>
+          <div class="isRight">
+            <h5 class="index-headline featured"></span></h5>
+            <footer class="site-footer">
+              <section class="poweredby">
+                <a href="https://gohugo.io/">
+                  <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://jimmidyson.github.io/img/hugo-logo.png" />
+                </a><br />
+                Built with <a href="httpis://gohugo.io/">Hugo</a>.
+              </section>
+            </footer>
           </div>
-        </article>
-      
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="http://jimmidyson.github.io/hawtio-on-openshift" itemprop="url">hawtio on OpenShift</a></h2>
-            </header>
-            <section class="post-content" itemprop="description">
-              <p><p>If you haven&rsquo;t heard of it yet, <a href="http://hawt.io" title="hawtio - a JBoss project">hawtio</a> is pretty cool.
-It&rsquo;s an open source web console for managing your Java stuff, with loads of plugins
-already available &amp; really simple to write your own (&amp; hopefully contribute
-back). In one of my recent projects, I was using <a href="https://www.openshift.com/" title="OpenShift by Red Hat">OpenShift</a>
-for deployment &amp; wanted to use <a href="http://hawt.io" title="hawtio - a JBoss project">hawtio</a> to manage my application.
-It&rsquo;s pretty easy to get it going because, as PaaSes go, <a href="https://www.openshift.com/" title="OpenShift by Red Hat">OpenShift</a>
-is fantastically configurable.</p>
-
-<p>First step, if you haven&rsquo;t done so already, is to sign up to OpenShift
-<a href="https://www.openshift.com/app/account/new">here</a>. You can get a reasonable
-amount of resources for free so if you just want to play around you can. Then
-follow the <a href="https://developers.openshift.com/en/getting-started-overview.html">getting started guide</a>.
-Only takes a few minutes.</p>
-
-<p>Now let&rsquo;s get installing &amp; configuring <a href="http://hawt.io" title="hawtio - a JBoss project">hawtio</a>. First thing to do is
-to create an application. We&rsquo;re going to create a <a href="https://tomcat.apache.org">Tomcat</a>
-instance so we can deploy standard Java webapps. As OpenShift is from Red Hat,
-they provide their &ldquo;enterprise&rdquo; version of Tomcat, which they call
-<a href="http://www.redhat.com/en/technologies/jboss-middleware/web-server">Red Hat JBoss EWS</a>.
-OpenShift applications are deployed through what they call cartridges - we&rsquo;re going to
-use the <code>jbossews-2.0</code> cartridge to create our application, which I&rsquo;m going to call
-<code>hawtiodemo</code>, by running the following command (you can of course also do this on the
-OpenShift website):</p>
-
-<pre><code class="language-bash">rhc app create hawtiodemo jbossews-2.0
-</code></pre>
-
-<p>There will be a load of output on the screen &amp; it will hopefully finish with some
-details for your new application, something like this:</p>
-
-<pre><code class="language-nohighlight">Your application 'hawtiodemo' is now available.
-
-  URL:        http://hawtiodemo-jdyson.rhcloud.com/
-  SSH to:     xxxxxxxxxxxxxxxxxxxxxxxx@hawtiodemo-jdyson.rhcloud.com
-  Git remote: ssh://xxxxxxxxxxxxxxxxxxxxxxxx@hawtiodemo-jdyson.rhcloud.com/~/git/hawtiodemo.git/
-  Cloned to:  /home/jdyson/projects/hawtiodemo
-
-Run 'rhc show-app hawtiodemo' for more details about your app.
-</code></pre>
-
-<p>Hitting the URL as specified will bring you to the default application that is
-included in the OpenShift cartridge - a quick start to get something deployed
-for you to see working.</p>
-
-<p>Notice the last line saying it&rsquo;s cloned the git repository that OpenShift uses for your
-deployments into a local directory - very convenient. If you change into that local
-directory, you&rsquo;ll see the normal contents for a Maven webapp project: a <code>pom.xml</code>,
-<code>README</code>, <code>src/</code>. This is where you would develop your web application, just like a
-normal Maven web application. I&rsquo;m not going to do that here as this is about how to get
-hawtio deployed &amp; configured on OpenShift, but it&rsquo;s good to see nonetheless.</p>
-
-<p>So now we have a deployed starter webapp, let&rsquo;s get hawtio ready to deploy. In the
-cloned git repo, you&rsquo;ll see a directory called <code>webapps</code>. Deploying hawtio is as simple
-as downloading the war file from the <a href="http://hawt.io/getstarted/index.html#Using_a_Servlet_Engine_or_Application_Server">hawtio website</a>
-&amp; placing it in the <code>webapps</code> directory. If you&rsquo;re on Linux you can simply run:</p>
-
-<pre><code class="language-bash">curl -o webapps/hawtio.war https://oss.sonatype.org/content/repositories/public/io/hawt/hawtio-default/1.4.21/hawtio-default-1.4.21.war
-</code></pre>
-
-<p>Now you have to add it to the git repo - this feels a bit weird to me, adding a binary archive to
-a git repo, but this is how OpenShift works so let’s go with it:</p>
-
-<pre><code class="language-bash">git add webapps/hawtio.war
-git commit -m &quot;Added hawtio.war&quot;
-</code></pre>
-
-<p>Deploying this is as simple as any other OpenShift deployment:</p>
-
-<pre><code class="language-bash">git push
-</code></pre>
-
-<p>There will be loads of output as OpenShift deploys your updated application, finishing with something like</p>
-
-<pre><code class="language-nohighlight">remote: Git Post-Receive Result: success
-remote: Activation status: success
-remote: Deployment completed with status: success
-</code></pre>
-
-<p>You can also check the Tomcat logs to ensure it&rsquo;s started correctly:</p>
-
-<pre><code class="language-bash">rhc tail
-</code></pre>
-
-<p>Congratulations - you&rsquo;ve just installed &amp; deployed hawtio. You can hit it at <code>/hawtio</code>
-under your OpenShift application URL, for me that is <a href="http://hawtiodemo-jdyson.rhcloud.com/hawtio/">http://hawtiodemo-jdyson.rhcloud.com/hawtio/</a>.
-You&rsquo;ll see that you can access hawtio without logging in - not great, as it&rsquo;s pretty powerful -
-it can access anything through JMX so you could even stop your application. So let&rsquo;s secure it.</p>
-
-<p>Hawtio uses JAAS for security. It discovers what app server it&rsquo;s deployed on to &amp; uses the native
-app server JAAS configuration so as not to reinvent the wheel. For Tomcat, that means the
-configuring the <code>tomcat-users.xml</code> file. Luckily, OpenShift makes configuration files available
-in your git repo for you to configure. Edit <code>.openshift/config/tomcat-users.xml</code> &amp; add in a
-user &amp; a role, so your <code>tomcat-users.xml</code> file will look something like this:</p>
-
-<pre><code class="language-xml">&lt;?xml version='1.0' encoding='utf-8'?&gt;
-&lt;tomcat-users&gt;
-  &lt;role rolename=&quot;admin&quot;/&gt;
-  &lt;user username=&quot;admin&quot; password=&quot;xxxxxxxx&quot; roles=&quot;admin&quot;/&gt;
-&lt;/tomcat-users&gt;
-</code></pre>
-
-<p>Set the password to something secure - you can even encrypt the password by following something
-like <a href="https://www.badllama.com/content/encrypting-tomcat-usersxml-passwords">this</a> if you want.</p>
-
-<p>Next thing to do is to enable authentication for hawtio. This again is very simple - all you need
-to do is to add some Java system properties for Tomcat. You can read more about hawtio configuration
-<a href="http://hawt.io/configuration/index.html">here</a>. On OpenShift, you can add hooks to run at
-different stages of your application lifecycle. We&rsquo;re going to add a script that runs before our
-application starts to set up <code>CATALINA_OPTS</code>, the standard way to add system properties to Tomcat.
-Edit a file called <code>.openshift/action_hooks/pre_start_jbossews-2.0</code> &amp; add the following content:</p>
-
-<pre><code class="language-bash">export CATALINA_OPTS='-Dhawtio.authenticationEnabled=true -Dhawtio.role=admin'
-</code></pre>
-
-<p>That&rsquo;s all there is to it - enable authentication &amp; limit access to hawtio to those users with the
-<code>admin</code> role as we specified in <code>tomcat-users.xml</code>. You can of course change that to whatever you want.</p>
-
-<p>Let&rsquo;s commit those files &amp; push our updated application:</p>
-
-<pre><code class="language-bash">git add .openshift/action_hooks/pre_start_jbossews-2.0 \
-        .openshift/config/tomcat-users.xml
-git commit -m &quot;Added hawtio authentication&quot;
-git push
-</code></pre>
-
-<p>Again, you&rsquo;ll get the wall of text as OpenShift deploys your application - wait for the success at the
-end. If you run <code>rhc tail</code> again, you&rsquo;ll see confirmation that hawtio has indeed picked up the system
-properties &amp; enabled authentication:</p>
-
-<pre><code class="language-nohighlight">INFO  | localhost-startStop-1 | Discovered container Apache Tomcat to use with hawtio authentication filter
-INFO  | localhost-startStop-1 | Starting hawtio authentication filter, JAAS realm: &quot;*&quot; authorized role(s): &quot;admin&quot; role principal classes: &quot;io.hawt.web.tomcat.TomcatPrincipal&quot;
-</code></pre>
-
-<p>Now refresh hawtio in your browser &amp; this time you will be redirected to the hawtio log in page.
-Log in with the credentials you specified earlier &amp; you are now authenticated in hawtio. Browse
-around, see what you can do - it really is such a useful application.</p>
-
-<p>I hope that seemed pretty easy to you - a lot of writing here for something that literally takes 5
-minutes from beginning to end. Hawtio is similarly easy to deploy in any of your applications, from
-standalone Java apps to apps deployed on J2EE application servers, super flexible, super useful.</p>
-</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="2014-09-30T09:47:47&#43;01:00">Tue, Sep 30, 2014</time>
-              <a class="read-more-link" href="http://jimmidyson.github.io/hawtio-on-openshift">Continue reading…</a>
-            </div>
-          </div>
-        </article>
-      
+        </div>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image" >
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Streaming thoughts</h1>
+        <h2 class="blog-description">Current projects &amp; general musings</h2>
+        <a href="http://jimmidyson.github.io/" class="btn">Back to Overview</a>
+      </div>
     </div>
-</main>
-<footer class="site-footer">
-  <div class="inner">
-    <section class="poweredby">
-      <a href="http://hugo.spf13.com/">
-        <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://jimmidyson.github.io/img/hugo-logo.png" />
-      </a><br />
-      Built with <a href="http://hugo.spf13.com/">Hugo</a>.
-    </section>
-  </div>
-</footer>
-
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
 <script type="text/javascript" src="http://jimmidyson.github.io/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="http://jimmidyson.github.io/js/index.js"></script>
@@ -581,3 +400,5 @@ standalone Java apps to apps deployed on J2EE application servers, super flexibl
 </script>
 
 
+  </body>
+</html>

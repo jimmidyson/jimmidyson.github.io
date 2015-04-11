@@ -6,8 +6,272 @@
     <description>Recent content in Posts on Streaming thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 14 Jan 2015 10:37:47 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2015 15:24:56 +0100</lastBuildDate>
     <atom:link href="http://jimmidyson.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Clustering on Kubernetes &amp; OpenShift3 using DNS</title>
+      <link>http://jimmidyson.github.io/clustering-on-kubernetes--openshift3-using-dns/</link>
+      <pubDate>Thu, 09 Apr 2015 15:24:56 +0100</pubDate>
+      
+      <guid>http://jimmidyson.github.io/clustering-on-kubernetes--openshift3-using-dns/</guid>
+      <description>
+
+&lt;h2 id=&#34;tl-dr:cb8b5430a876f081248526000f46aff3&#34;&gt;tl;dr&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Set up a &lt;a href=&#34;http://kubernetes.io/&#34; title=&#34;Kubernetes - clustered Linux containers&#34;&gt;Kubernetes&lt;/a&gt;/&lt;a href=&#34;http://www.openshift.org/&#34; title=&#34;OpenShift by Red Hat&#34;&gt;OpenShift&lt;/a&gt; cluster with DNS enabled.&lt;/li&gt;
+&lt;li&gt;Create your application image that performs a DNS lookup to find cluster nodes.&lt;/li&gt;
+&lt;li&gt;Create a service to access your cluster: target it only at the nodes that
+should be accessible by clients (e.g. &lt;a href=&#34;https://www.elastic.co/&#34; title=&#34;Elasticsearch - distributed, open source search and analytics engine&#34;&gt;Elasticsearch&lt;/a&gt; client nodes).&lt;/li&gt;
+&lt;li&gt;Create a headless service that uses a common label superset - use the service
+name as the DNS entry that your application image looks up to find cluster nodes.&lt;/li&gt;
+&lt;li&gt;Create replication controllers for your pods. If you have multiple pod types
+that should form part of the same cluster remember to use a common superset for
+your labels.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;the-details:cb8b5430a876f081248526000f46aff3&#34;&gt;The details&lt;/h2&gt;
+
+&lt;p&gt;One of the big promises of &lt;a href=&#34;http://kubernetes.io/&#34; title=&#34;Kubernetes - clustered Linux containers&#34;&gt;Kubernetes&lt;/a&gt; &amp;amp; &lt;a href=&#34;http://www.openshift.org/&#34; title=&#34;OpenShift by Red Hat&#34;&gt;OpenShift&lt;/a&gt; is really easy management of
+your containerised applications. For standalone or load-balanced stateless
+applications, Kubernetes works brilliantly, but one thing that I had a bit of
+trouble figuring out was how do perform cluster discovery for my applications?
+Say one of my applications needs to know about at least one other node (seed
+node) that it should join a cluster with.&lt;/p&gt;
+
+&lt;p&gt;There is an &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra&#34;&gt;example in the Kubernetes repo&lt;/a&gt; for Cassandra here
+that requests existing service endpoints from the Kubernetes API
+server &amp;amp; use those as the seed servers. You can see the code for it
+&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra#seed-provider-source&#34;&gt;here&lt;/a&gt;.
+That works great for a cluster that allows unauthenticated/unauthorized access
+to the API server, but hopefully most people are going to lock down their API
+server (OpenShift comes with auth baked in by the way &amp;amp; secure by default). If
+you&amp;rsquo;re going to secure your API server then you&amp;rsquo;re going to have to distribute
+credentials via
+&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/design/secrets.md&#34;&gt;secrets&lt;/a&gt;
+around to every container that wants to call the API server. Personally I&amp;rsquo;d
+rather only distribute secrets when absolutely necessary: if there&amp;rsquo;s a
+way to achieve what we need to achieve without distributing secrets then I would
+prefer to do that.&lt;/p&gt;
+
+&lt;p&gt;It would be cool if Kubernetes had the concept of cluster seeds baked in &amp;amp; could
+provide seeds to pods through configuration, but right now it can&amp;rsquo;t so we&amp;rsquo;re going to take
+advantage of a couple of things that Kubernetes provides to do that: &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md#headless-services&#34;&gt;&lt;em&gt;headless
+services&lt;/em&gt;&lt;/a&gt;
+&amp;amp; &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/dns.md&#34;&gt;&lt;em&gt;DNS&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Before we go any further, a quick recap of 3 Kubernetes concepts we&amp;rsquo;ll be using
+in this post (taken from the excellent Kubernetes documentation):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;Pods&lt;/em&gt; are the smallest deployable units that can be created, scheduled,
+and managed. Pods are a colocated group of containers (run on the same node) &amp;amp;
+share stuff like network space (e.g. IP address) &amp;amp; disk (via volumes). &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/pods.md&#34;&gt;Read
+more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Replication controllers&lt;/em&gt; (RCs) ensure that a    specified number of pod
+&amp;ldquo;replicas&amp;rdquo; are running at any one time. If there are    too many, it will kill
+some. If there are too few, it will start more.    &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/replication-controller.md&#34;&gt;Reads
+more&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Services&lt;/em&gt; are an abstraction which defines a logical set of Pods    and a
+policy by which to access them. The set of Pods targeted by a Service is
+determined by a &lt;em&gt;Label Selector&lt;/em&gt;. A service is used to access a group of pods
+through a consistent IP address without knowing the exact pods, especially
+important considering the ephemeral nature of pods. &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md&#34;&gt;Read
+more&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A &lt;em&gt;headless service&lt;/em&gt; is a service that has no IP address (&amp;amp; therefore no
+service environment variables, load-balancing or proxying). It is simply used to
+track what endpoints (pods) would be part of the service. Perfect for simple
+discovery.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to assume you have a working Kubernetes cluster up &amp;amp; running. If you
+don&amp;rsquo;t then you can really easily set one up on any Docker-enabled host via a
+script that &lt;a href=&#34;http://fabric8.io/&#34;&gt;Fabric8&lt;/a&gt; provides (see
+&lt;a href=&#34;http://fabric8.io/guide/openShiftDocker.html#run-the-start-script&#34;&gt;here&lt;/a&gt; if
+you&amp;rsquo;re interested). Note that the script will actually spin up OpenShift3 rather
+than vanilla Kubernetes as Fabric8 uses some of the extensions that OpenShift
+provides, like builds, deployment pipelines, etc for other things. Everything
+below will work on vanilla Kubernetes of course.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;re also going to need to have the
+&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/tree/master/cluster/addons/dns&#34;&gt;&lt;em&gt;DNS cluster add-on&lt;/em&gt;&lt;/a&gt;.
+Btw, this is another capability that OpenShift provides by default.&lt;/p&gt;
+
+&lt;p&gt;For a working (hopefully!) example, I&amp;rsquo;m going to use &lt;a href=&#34;https://www.elastic.co/&#34; title=&#34;Elasticsearch - distributed, open source search and analytics engine&#34;&gt;Elasticsearch&lt;/a&gt; as I&amp;rsquo;m pretty
+familiar with it &amp;amp; it&amp;rsquo;s awesome horizontal scalability lends itself very well to
+hopefully explaining this clearly. This is an application that we provide for
+one click installation as part of Fabric8 to build up Elasticsearch clusters. To
+make this a little more interesting we&amp;rsquo;re actually going to create a cluster of
+the 3 different &lt;a href=&#34;http://www.elastic.co/guide/en/elasticsearch/reference/1.5/modules-node.html&#34;&gt;types of Elasticsearch node&lt;/a&gt;:
+Master, Data &amp;amp; Client. If you&amp;rsquo;re building a large cluster this is probably what
+you would want to do. We&amp;rsquo;re going to make it so that each type can be scaled
+individually by resizing the respective replication controller &amp;amp; each node is
+going to discover other nodes in the cluster via a headless service.&lt;/p&gt;
+
+&lt;p&gt;So to action&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Before we actually create anything, let&amp;rsquo;s prepare our Kubernetes manifests.
+We&amp;rsquo;ll send the create requests to the API server at the end - don&amp;rsquo;t jump the gun!&lt;/p&gt;
+
+&lt;p&gt;First let&amp;rsquo;s create our replication controllers. All 3 look pretty similar - this
+one&amp;rsquo;s for the client nodes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;apiVersion&amp;quot; : &amp;quot;v1beta1&amp;quot;,
+  &amp;quot;id&amp;quot; : &amp;quot;elasticsearch-client-rc&amp;quot;,
+  &amp;quot;kind&amp;quot; : &amp;quot;ReplicationController&amp;quot;,
+  &amp;quot;labels&amp;quot; : {
+    &amp;quot;component&amp;quot; : &amp;quot;elasticsearch&amp;quot;,
+    &amp;quot;type&amp;quot;: &amp;quot;client&amp;quot;
+  },
+  &amp;quot;desiredState&amp;quot; : {
+    &amp;quot;podTemplate&amp;quot; : {
+      &amp;quot;desiredState&amp;quot; : {
+        &amp;quot;manifest&amp;quot; : {
+          &amp;quot;containers&amp;quot; : [ {
+            &amp;quot;env&amp;quot; : [
+              { &amp;quot;name&amp;quot; : &amp;quot;SERVICE_DNS&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;elasticsearch-cluster&amp;quot; },
+              { &amp;quot;name&amp;quot;: &amp;quot;NODE_DATA&amp;quot;,    &amp;quot;value&amp;quot;: &amp;quot;false&amp;quot; },
+              { &amp;quot;name&amp;quot;: &amp;quot;NODE_MASTER&amp;quot;,  &amp;quot;value&amp;quot;: &amp;quot;false&amp;quot; }
+            ],
+            &amp;quot;image&amp;quot; : &amp;quot;fabric8/elasticsearch-k8s:1.5.0&amp;quot;,
+            &amp;quot;imagePullPolicy&amp;quot; : &amp;quot;PullIfNotPresent&amp;quot;,
+            &amp;quot;name&amp;quot; : &amp;quot;elasticsearch-container&amp;quot;,
+            &amp;quot;ports&amp;quot; : [
+              { &amp;quot;containerPort&amp;quot; : 9200 },
+              { &amp;quot;containerPort&amp;quot; : 9300 }
+            ]
+          } ],
+          &amp;quot;id&amp;quot; : &amp;quot;elasticsearchPod&amp;quot;,
+          &amp;quot;version&amp;quot; : &amp;quot;v1beta1&amp;quot;
+        }
+      },
+      &amp;quot;labels&amp;quot; : {
+        &amp;quot;component&amp;quot; : &amp;quot;elasticsearch&amp;quot;,
+        &amp;quot;type&amp;quot;: &amp;quot;client&amp;quot;
+      }
+    },
+    &amp;quot;replicaSelector&amp;quot; : {
+      &amp;quot;component&amp;quot; : &amp;quot;elasticsearch&amp;quot;,
+      &amp;quot;type&amp;quot;: &amp;quot;client&amp;quot;
+    },
+    &amp;quot;replicas&amp;quot; : 1
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Few things of importance here: notice the labels on the pod template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;labels&amp;quot; : {
+  &amp;quot;component&amp;quot; : &amp;quot;elasticsearch&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;client&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For the replication controllers for data &amp;amp; master nodes, you will need to update
+the &lt;code&gt;type&lt;/code&gt; in the label - leave the &lt;code&gt;component&lt;/code&gt; part alone: having a common
+superset in the labels for all the node types is what we will use when we create
+our headless service.&lt;/p&gt;
+
+&lt;p&gt;The environment variables are something that the &lt;code&gt;fabric8/elasticsearch-k8s&lt;/code&gt;
+uses to configure Elasticsearch so you will need to update the &lt;code&gt;NODE_DATA&lt;/code&gt; &amp;amp;
+&lt;code&gt;NODE_MASTER&lt;/code&gt; environment variables appropriately for the other two replication
+controllers for the other node types.&lt;/p&gt;
+
+&lt;p&gt;We want all access to the Elasticsearch cluster to go through the client nodes
+so let&amp;rsquo;s create a service to do just that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;id&amp;quot;: &amp;quot;elasticsearch&amp;quot;,
+  &amp;quot;apiVersion&amp;quot;: &amp;quot;v1beta1&amp;quot;,
+  &amp;quot;kind&amp;quot;: &amp;quot;Service&amp;quot;,
+  &amp;quot;containerPort&amp;quot;: 9200,
+  &amp;quot;port&amp;quot;: 9200,
+  &amp;quot;selector&amp;quot;: {
+    &amp;quot;component&amp;quot;: &amp;quot;elasticsearch&amp;quot;,
+    &amp;quot;type&amp;quot;: &amp;quot;client&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that the selector matches the labels of the client nodes replication
+controller only.&lt;/p&gt;
+
+&lt;p&gt;Finally we create a headless service that we&amp;rsquo;re going to use to discover our
+cluster nodes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;id&amp;quot;: &amp;quot;elasticsearch-cluster&amp;quot;,
+  &amp;quot;apiVersion&amp;quot;: &amp;quot;v1beta1&amp;quot;,
+  &amp;quot;PortalIP&amp;quot;: &amp;quot;None&amp;quot;,
+  &amp;quot;kind&amp;quot;: &amp;quot;Service&amp;quot;,
+  &amp;quot;containerPort&amp;quot;: 9300,
+  &amp;quot;port&amp;quot;: 9300,
+  &amp;quot;selector&amp;quot;: {
+    &amp;quot;component&amp;quot;: &amp;quot;elasticsearch&amp;quot;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the &lt;code&gt;PortalIP&lt;/code&gt; is set to &lt;code&gt;None&lt;/code&gt; - that means no IP address will be
+allocated to the service. Sadly we still have to specify the &lt;code&gt;containerPort&lt;/code&gt; &amp;amp;
+&lt;code&gt;port&lt;/code&gt; although these are not used at all.&lt;/p&gt;
+
+&lt;p&gt;The final thing to take not of is the &lt;code&gt;id&lt;/code&gt;: &lt;code&gt;elasticsearch-cluster&lt;/code&gt;. This is the
+DNS name that the service can be discovered under. With a normal service, the
+DNS entry that is registered is an A record with the IP address that is
+allocated to the service. With a headless service, however, an A record is created
+for each service endpoint (pod targeted by the specified selector) for the
+service name.&lt;/p&gt;
+
+&lt;p&gt;Go ahead &amp;amp; create your resources - create the services first so that cluster
+discovery service is available when the nodes first come up.&lt;/p&gt;
+
+&lt;p&gt;Once your resources are created &amp;amp; the pods are up, let&amp;rsquo;s check the DNS entries
+have been created properly with a quick &lt;code&gt;dig&lt;/code&gt;. On my setup, this is the result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ dig @localhost elasticsearch-cluster.default.local. +short
+
+172.17.0.13
+172.17.0.10
+172.17.0.11
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And for the Elasticsearch client service:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ dig @localhost elasticsearch.default.local. +short
+
+172.30.17.196
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we use the Elasticsearch client service to check the health of the cluster:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl http://172.30.17.196:9200/_cluster/health\?pretty
+
+{
+  &amp;quot;cluster_name&amp;quot; : &amp;quot;elasticsearch&amp;quot;,
+  &amp;quot;status&amp;quot; : &amp;quot;green&amp;quot;,
+  &amp;quot;timed_out&amp;quot; : false,
+  &amp;quot;number_of_nodes&amp;quot; : 3,
+  &amp;quot;number_of_data_nodes&amp;quot; : 1,
+  &amp;quot;active_primary_shards&amp;quot; : 0,
+  &amp;quot;active_shards&amp;quot; : 0,
+  &amp;quot;relocating_shards&amp;quot; : 0,
+  &amp;quot;initializing_shards&amp;quot; : 0,
+  &amp;quot;unassigned_shards&amp;quot; : 0,
+  &amp;quot;number_of_pending_tasks&amp;quot; : 0
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yay - it worked! 3 nodes in our cluster discovered without any need for
+credentials to be distributed using DNS.&lt;/p&gt;
+
+&lt;p&gt;Now play with resizing each of the 3 node types &amp;amp; see what happens - easy cluster
+resizing FTW.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Fabric8 V2</title>

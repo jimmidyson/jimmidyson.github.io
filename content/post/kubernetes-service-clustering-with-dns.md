@@ -1,6 +1,5 @@
 +++
 date = "2015-04-09T15:24:56+01:00"
-draft = true
 title = "Clustering on Kubernetes & OpenShift3 using DNS"
 topics = [ "clustering" ]
 tags = [ "openshift", "fabric8", "kubernetes", "elasticsearch" ]

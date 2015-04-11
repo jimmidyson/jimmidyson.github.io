@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fabric8 on Streaming thoughts</title>
-    <link>http://jimmidyson.github.io/tags/fabric8/</link>
-    <description>Recent content in Fabric8 on Streaming thoughts</description>
+    <title>Elasticsearch on Streaming thoughts</title>
+    <link>http://jimmidyson.github.io/tags/elasticsearch/</link>
+    <description>Recent content in Elasticsearch on Streaming thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Thu, 09 Apr 2015 15:24:56 +0100</lastBuildDate>
-    <atom:link href="http://jimmidyson.github.io/tags/fabric8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jimmidyson.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Clustering on Kubernetes &amp; OpenShift3 using DNS</title>
@@ -270,20 +270,6 @@ credentials to be distributed using DNS.&lt;/p&gt;
 
 &lt;p&gt;Now play with resizing each of the 3 node types &amp;amp; see what happens - easy cluster
 resizing FTW.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Fabric8 V2</title>
-      <link>http://jimmidyson.github.io/fabric8-v2/</link>
-      <pubDate>Wed, 14 Jan 2015 10:37:47 +0100</pubDate>
-      
-      <guid>http://jimmidyson.github.io/fabric8-v2/</guid>
-      <description>&lt;p&gt;&lt;div class=&#34;presentation&#34;&gt;
-  &lt;iframe src=&#34;//jimmidyson.github.io/presentations/fabric8v2.html&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;/p&gt;
 </description>
     </item>
     
