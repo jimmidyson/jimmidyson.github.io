@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Streaming thoughts</title>
-    <link>http://jimmidyson.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Streaming thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Thu, 09 Apr 2015 15:24:56 +0100</lastBuildDate>
-    <atom:link href="http://jimmidyson.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Clustering on Kubernetes &amp; OpenShift3 using DNS</title>
-      <link>http://jimmidyson.github.io/clustering-on-kubernetes--openshift3-using-dns/</link>
+      <link>http://localhost:1313/clustering-on-kubernetes--openshift3-using-dns/</link>
       <pubDate>Thu, 09 Apr 2015 15:24:56 +0100</pubDate>
       
-      <guid>http://jimmidyson.github.io/clustering-on-kubernetes--openshift3-using-dns/</guid>
+      <guid>http://localhost:1313/clustering-on-kubernetes--openshift3-using-dns/</guid>
       <description>
 
 &lt;h2 id=&#34;tl-dr:cb8b5430a876f081248526000f46aff3&#34;&gt;tl;dr&lt;/h2&gt;
@@ -275,10 +275,10 @@ resizing FTW.&lt;/p&gt;
     
     <item>
       <title>Fabric8 V2</title>
-      <link>http://jimmidyson.github.io/fabric8-v2/</link>
+      <link>http://localhost:1313/fabric8-v2/</link>
       <pubDate>Wed, 14 Jan 2015 10:37:47 +0100</pubDate>
       
-      <guid>http://jimmidyson.github.io/fabric8-v2/</guid>
+      <guid>http://localhost:1313/fabric8-v2/</guid>
       <description>&lt;p&gt;&lt;div class=&#34;presentation&#34;&gt;
   &lt;iframe src=&#34;//jimmidyson.github.io/presentations/fabric8v2.html&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
@@ -289,10 +289,10 @@ resizing FTW.&lt;/p&gt;
     
     <item>
       <title>hawtio on OpenShift</title>
-      <link>http://jimmidyson.github.io/hawtio-on-openshift/</link>
+      <link>http://localhost:1313/hawtio-on-openshift/</link>
       <pubDate>Tue, 30 Sep 2014 09:47:47 +0100</pubDate>
       
-      <guid>http://jimmidyson.github.io/hawtio-on-openshift/</guid>
+      <guid>http://localhost:1313/hawtio-on-openshift/</guid>
       <description>&lt;p&gt;If you haven&amp;rsquo;t heard of it yet, &lt;a href=&#34;http://hawt.io&#34; title=&#34;hawtio - a JBoss project&#34;&gt;hawtio&lt;/a&gt; is pretty cool.
 It&amp;rsquo;s an open source web console for managing your Java stuff, with loads of plugins
 already available &amp;amp; really simple to write your own (&amp;amp; hopefully contribute
