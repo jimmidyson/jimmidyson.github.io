@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-  {{ partial "head.html" }}
+  {{ partial "head.html" . }}
   <body>
-    {{ partial "header.html" }}
+    {{ partial "header.html" . }}
     <div class="page-content">
       <div class="wrapper">
         {{ if .Site.Params.cover }}
@@ -81,5 +81,5 @@
       {{ end }}
     </div>
 </main>
-{{ partial "footer.html" }}
-{{ partial "javascripts.html" }}
+{{ partial "footer.html" . }}
+{{ partial "javascripts.html" . }}

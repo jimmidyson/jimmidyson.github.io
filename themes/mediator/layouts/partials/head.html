@@ -1,5 +1,5 @@
 <head>
-  <base href="{{ .Site.BaseURL }}" />
+  <base href="{{ .Site.BaseUrl }}" />
   <meta charset="utf-8">
   <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
   {{ else }}
   <title>{{ .Title }} | {{ .Site.Title }}</title>
   {{ end }}
-  <meta name="description" content="{{ .Site.Description }}" />
+  <meta name="description" content="{{ .Site.Params.defaultDescription }}" />
 
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -28,5 +28,7 @@
   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
   {{ if .RSSlink }}<link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
-  {{ partial "google_analytics.html" }}
+  {{ if .Site.Params.googleAnalytics }}
+  {{ partial "google_analytics.html" . }}
+  {{ end }}
 </head>

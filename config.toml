@@ -5,31 +5,30 @@ baseurl = "http://jimmidyson.github.io/"
 canonifyurls = true
 
 [author]
-    name = "Jimmi Dyson"
-    image = "http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png"
+  name = "Jimmi Dyson"
+  image = "http://www.gravatar.com/avatar/c8ab87dec9a30fdb3b8c7c9d0d6f92a9.png"
 
 [author.social]
   twitter = "https://twitter.com/jimmidyson"
   github = "https://github.com/jimmidyson"
 
 [permalinks]
-    # Change the permalink format for the 'post' content type.
-    post = "/:title/"
+  # Change the permalink format for the 'post' content type.
+  post = "/:title/"
 
 [params]
 
-    # Default page metadata, used when the specific page doesn't set its own.
-    defaultDescription = "Current projects & general musings"
-    defaultKeywords = "jimmi dyson,home,website,blog"
+  # Default page metadata, used when the specific page doesn't set its own.
+  defaultDescription = "Current projects & general musings"
+  defaultKeywords = "jimmi dyson,home,website,blog"
 
-    disqusShortname = "jimmidyson"
+  disqusShortname = "jimmidyson"
 
-    # Tagline to display under the author name in the sidebar, keep it short.
-    tagline = "Current projects & general musings"
+  # Tagline to display under the author name in the sidebar, keep it short.
+  tagline = "Current projects & general musings"
 
-    # Metadata used to drive integrations.
-    googleAuthorship = "116158239234656634929"
-    googleAnalytics = "UA-44918664-1"
+  # Metadata used to drive integrations.
+  googleAnalytics = "UA-44918664-1"
 
-    #cover = "/img/cover.jpg"
+  #cover = "/img/cover.jpg"
 

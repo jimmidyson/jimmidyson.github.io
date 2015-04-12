@@ -20,25 +20,15 @@
 
   <link rel="canonical" href="" />
 
-  <link rel="shortcut icon" href="http://jimmidyson.github.io/assets/images/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/assets/images/favicon.ico">
   <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="http://jimmidyson.github.io/css/main.css" />
-  <link rel="stylesheet" type="text/css" media="print" href="http://jimmidyson.github.io/css/print.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="http://localhost:1313/css/print.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
   
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', '', 'jimmidyson.github.io');
-  ga('require', 'linkid', 'linkid.js');
-  ga('require', 'displayfeatures');
-  ga('send', 'pageview');
-</script>
-
+  
 </head>
 
   <body itemscope itemtype="http://schema.org/Article">
@@ -205,6 +195,24 @@ minutes from beginning to end. Hawtio is similarly easy to deploy in any of your
 standalone Java apps to apps deployed on J2EE application servers, super flexible, super useful.</p>
 
         </section>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'jimmidyson';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
         <div class="bottom-teaser cf">
           <div class="isLeft">
             <h5 class="index-headline featured"><span>Written by</span></h5>
@@ -221,7 +229,7 @@ standalone Java apps to apps deployed on J2EE application servers, super flexibl
             <footer class="site-footer">
               <section class="poweredby">
                 <a href="https://gohugo.io/">
-                  <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://jimmidyson.github.io/img/hugo-logo.png" />
+                  <img alt="Built with Hugo" style="border-width:0; height: 31px;" src="http://localhost:1313/img/hugo-logo.png" />
                 </a><br />
                 Built with <a href="httpis://gohugo.io/">Hugo</a>.
               </section>
@@ -237,14 +245,14 @@ standalone Java apps to apps deployed on J2EE application servers, super flexibl
       <div class="inner">
         <h1 class="blog-title">Streaming thoughts</h1>
         <h2 class="blog-description">Current projects &amp; general musings</h2>
-        <a href="http://jimmidyson.github.io/" class="btn">Back to Overview</a>
+        <a href="http://localhost:1313/" class="btn">Back to Overview</a>
       </div>
     </div>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-<script type="text/javascript" src="http://jimmidyson.github.io/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="http://jimmidyson.github.io/js/index.js"></script>
-<script type="text/javascript" src="http://jimmidyson.github.io/js/readingTime.min.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+<script type="text/javascript" src="http://localhost:1313/js/readingTime.min.js"></script>
 <script>
 (function ($) {
   "use strict";
@@ -285,5 +293,8 @@ standalone Java apps to apps deployed on J2EE application servers, super flexibl
 </script>
 
 
-  </body>
+  <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
