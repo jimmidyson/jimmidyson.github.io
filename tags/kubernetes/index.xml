@@ -24,10 +24,10 @@
 &lt;li&gt;Create your application image that performs a DNS lookup to find cluster nodes.&lt;/li&gt;
 &lt;li&gt;Create a service to access your cluster: target it only at the nodes that
 should be accessible by clients (e.g. &lt;a href=&#34;https://www.elastic.co/&#34; title=&#34;Elasticsearch - distributed, open source search and analytics engine&#34;&gt;Elasticsearch&lt;/a&gt; client nodes).&lt;/li&gt;
-&lt;li&gt;Create a headless service that uses a common label superset - use the service
+&lt;li&gt;Create a headless service that uses a common label subset - use the service
 name as the DNS entry that your application image looks up to find cluster nodes.&lt;/li&gt;
 &lt;li&gt;Create replication controllers for your pods. If you have multiple pod types
-that should form part of the same cluster remember to use a common superset for
+that should form part of the same cluster remember to use a common subset for
 your labels.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -40,7 +40,7 @@ trouble figuring out was how do perform cluster discovery for my applications?
 Say one of my applications needs to know about at least one other node (seed
 node) that it should join a cluster with.&lt;/p&gt;
 
-&lt;p&gt;There is an &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra&#34;&gt;example in the Kubernetes repo&lt;/a&gt; for Cassandra here
+&lt;p&gt;There is an &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra&#34;&gt;example in the Kubernetes repo&lt;/a&gt; for Cassandra
 that requests existing service endpoints from the Kubernetes API
 server &amp;amp; use those as the seed servers. You can see the code for it
 &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra#seed-provider-source&#34;&gt;here&lt;/a&gt;.
@@ -71,8 +71,8 @@ share stuff like network space (e.g. IP address) &amp;amp; disk (via volumes). &
 more&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Replication controllers&lt;/em&gt; (RCs) ensure that a    specified number of pod
 &amp;ldquo;replicas&amp;rdquo; are running at any one time. If there are    too many, it will kill
-some. If there are too few, it will start more.    &lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/replication-controller.md&#34;&gt;Reads
-more&lt;/a&gt;&lt;/li&gt;
+some. If there are too few, it will start more.
+&lt;a href=&#34;https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/replication-controller.md&#34;&gt;Read more&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Services&lt;/em&gt; are an abstraction which defines a logical set of Pods    and a
 policy by which to access them. The set of Pods targeted by a Service is
 determined by a &lt;em&gt;Label Selector&lt;/em&gt;. A service is used to access a group of pods
@@ -172,7 +172,7 @@ one&amp;rsquo;s for the client nodes:&lt;/p&gt;
 
 &lt;p&gt;For the replication controllers for data &amp;amp; master nodes, you will need to update
 the &lt;code&gt;type&lt;/code&gt; in the label - leave the &lt;code&gt;component&lt;/code&gt; part alone: having a common
-superset in the labels for all the node types is what we will use when we create
+subset in the labels for all the node types is what we will use when we create
 our headless service.&lt;/p&gt;
 
 &lt;p&gt;The environment variables are something that the &lt;code&gt;fabric8/elasticsearch-k8s&lt;/code&gt;
