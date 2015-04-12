@@ -15,10 +15,10 @@ tags = [ "openshift", "fabric8", "kubernetes", "elasticsearch" ]
 2. Create your application image that performs a DNS lookup to find cluster nodes.
 3. Create a service to access your cluster: target it only at the nodes that
 should be accessible by clients (e.g. [Elasticsearch][elasticsearch] client nodes).
-4. Create a headless service that uses a common label superset - use the service
+4. Create a headless service that uses a common label subset - use the service
 name as the DNS entry that your application image looks up to find cluster nodes.
 5. Create replication controllers for your pods. If you have multiple pod types
-that should form part of the same cluster remember to use a common superset for
+that should form part of the same cluster remember to use a common subset for
 your labels.
 
 ## The details
@@ -30,7 +30,7 @@ trouble figuring out was how do perform cluster discovery for my applications?
 Say one of my applications needs to know about at least one other node (seed
 node) that it should join a cluster with.
 
-There is an [example in the Kubernetes repo](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra) for Cassandra here
+There is an [example in the Kubernetes repo](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra) for Cassandra
 that requests existing service endpoints from the Kubernetes API
 server & use those as the seed servers. You can see the code for it
 [here](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/cassandra#seed-provider-source).
@@ -60,8 +60,8 @@ share stuff like network space (e.g. IP address) & disk (via volumes). [Read
 more] (https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/pods.md)
 2. _Replication controllers_ (RCs) ensure that a    specified number of pod
 "replicas" are running at any one time. If there are    too many, it will kill
-some. If there are too few, it will start more.    [Reads
-more](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/replication-controller.md)
+some. If there are too few, it will start more.
+[Read more](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/replication-controller.md)
 3. _Services_ are an abstraction which defines a logical set of Pods    and a
 policy by which to access them. The set of Pods targeted by a Service is
 determined by a _Label Selector_. A service is used to access a group of pods
@@ -162,7 +162,7 @@ Few things of importance here: notice the labels on the pod template:
 
 For the replication controllers for data & master nodes, you will need to update
 the `type` in the label - leave the `component` part alone: having a common
-superset in the labels for all the node types is what we will use when we create
+subset in the labels for all the node types is what we will use when we create
 our headless service.
 
 The environment variables are something that the `fabric8/elasticsearch-k8s`
