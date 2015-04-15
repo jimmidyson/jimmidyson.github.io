@@ -28,7 +28,7 @@ canonifyurls = true
   tagline = "Current projects & general musings"
 
   # Metadata used to drive integrations.
-  googleAnalytics = "UA-44918664-1"
+  googleAnalytics = "UA-32984711-1"
 
   #cover = "/img/cover.jpg"
 
