@@ -1,7 +1,7 @@
 title = "Streaming thoughts"
 languageCode = "en-gb"
 MetaDataFormat = "toml"
-baseurl = "http://jimmidyson.github.io/"
+baseurl = "https://jimmidyson.github.io/"
 canonifyurls = true
 
 [author]
